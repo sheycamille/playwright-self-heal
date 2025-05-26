@@ -1,0 +1,10 @@
+{
+  "registerButton": ["#hdhshhd", "buton[type='submit']", ".form-container buton"],
+  "form": ["#registrationForm", "form"],
+  "nameInput": ["#name", "dsgjslks"],
+  "emailInput": ["#email", "dsjhsgl"],
+  "passwordInput": ["#password", "input[name='password']", "input[type='password']:not([name='confirmPassword'])"],
+  "confirmPasswordInput": ["#confirmPassword", "input[name='confirmPassword']", "input[type='password']"],
+  "formContainer": [".form-container", "form"],
+  "heading": [".form-conainer h2", "h3"]
+}
