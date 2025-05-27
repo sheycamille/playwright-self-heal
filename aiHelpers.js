@@ -3,9 +3,6 @@ import { GoogleGenAI } from "@google/genai";
 
 const ai = new GoogleGenAI({ apiKey: "AIzaSyBK66v3yx1XmxKu0Q6VC92wKxXYVnCOsWQ" });
 
-function isPageClosed(page) {
-    return page.isClosed && page.isClosed();
-}
 
 export async function getAlternativeLocator(htmlContent, failedSelectors, fieldName) {
     const prompt = `

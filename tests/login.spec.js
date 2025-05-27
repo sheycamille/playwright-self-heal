@@ -1,7 +1,7 @@
 import { test } from '@playwright/test';
 import { promises as fs } from 'fs';
 import selectors from '../selectors.json' assert { type: "json" };
-import { smartFill, smartClick} from '../ai-helpers.js';
+import { smartFill, smartClick} from '../aiHelpers.js';
 
 // Only run in Chromium (Chrome)
 test.use({ browserName: 'chromium' });
@@ -10,9 +10,6 @@ test.setTimeout(60000);
 test('Register form self-healing test', async ({ page }) => {
     try {
         await page.goto('http://127.0.0.1:5500/index.html');
-        console.log('Page title:', await page.title());
-
-        // hy await smartVisible(page, 'heading', selectors.heading);
         await smartFill(page, 'name', selectors.nameInput, 'Alice Johnson');
         await smartFill(page, 'email', selectors.emailInput, 'alice@example.com');
         await smartFill(page, 'password', selectors.passwordInput, '12345678');
@@ -20,7 +17,7 @@ test('Register form self-healing test', async ({ page }) => {
         await smartClick(page, 'registerButton', selectors.registerButton);
 
     } catch (error) {
-        console.error('❌ Test failed:', error.message);
+        console.error('Test failed:', error.message);
         const content = await page.content();
         await fs.writeFile('error-page.html', content);
         await page.screenshot({ path: 'error-screenshot.png', fullPage: true });
