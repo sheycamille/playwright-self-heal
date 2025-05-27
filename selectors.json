@@ -1,5 +1,5 @@
 {
-  "registerButton": ["#hdhshhd", "buton[type='submit']", ".form-container buton"],
+  "registerButton": ["#regiterBtn", "buton[type='submit']", ".form-container buton"],
   "form": ["#registrationForm", "form"],
   "nameInput": ["#name", "dsgjslks"],
   "emailInput": ["#email", "dsjhsgl"],
